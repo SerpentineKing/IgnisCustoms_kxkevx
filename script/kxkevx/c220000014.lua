@@ -67,7 +67,7 @@ function s.e1evt(e,tp)
 	local tc=Duel.GetFirstTarget()
 	if tc:IsRelateToEffect(e) then
 		local c=e:GetHandler()
-
+		-- TODO : Add Reset
 		local e1b1=Effect.CreateEffect(c)
 		e1b1:SetType(EFFECT_TYPE_FIELD)
 		e1b1:SetCode(EFFECT_AVOID_BATTLE_DAMAGE)
