@@ -34,7 +34,7 @@ function s.initial_effect(c)
 	c:RegisterEffect(e2b)
 
 	local e2c=e2a:Clone()
-	e2c:SetCode(EFFECT_CANNOT_SPSUMMON)
+	e2c:SetCode(EFFECT_CANNOT_SPECIAL_SUMMON)
 	c:RegisterEffect(e2c)
 	--[[
 	If this card is sent to the GY, or banished, by an opponent’s card effect:
