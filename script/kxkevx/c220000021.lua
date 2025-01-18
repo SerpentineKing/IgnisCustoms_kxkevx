@@ -35,8 +35,8 @@ function s.e1tgt(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 end
 function s.e1evt(e,tp)
 	local c=e:GetHandler()
-	local ct=0
-	if Duel.GetCurrentPhase()==PHASE_STANDBY then ct=-1 end
+	local ct=1
+	if Duel.GetCurrentPhase()==PHASE_STANDBY then ct=0 end
 
 	local e1b=Effect.CreateEffect(c)
 	e1b:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)
@@ -51,7 +51,7 @@ end
 function s.e1bcon(e)
 	e:SetLabel(e:GetLabel()+1)
 
-	if e:GetLabel()==3 then
+	if e:GetLabel()==4 then
 		return true
 	end
 	return false
