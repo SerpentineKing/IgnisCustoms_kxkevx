@@ -1,0 +1,4 @@
+[expansion.kxkevx]
+default=true
+locale="en"
+recipe = ["kxkevx.toml"]

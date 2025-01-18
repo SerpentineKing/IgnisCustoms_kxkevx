@@ -1,0 +1,280 @@
+[[card]]
+id = 220000001
+setnumber = "KXRF-EN001"
+ot = "custom"
+name = "King of Kings, Lord of Lords"
+attribute = "light"
+race = "celestial-warrior"
+type = "monster effect"
+atk = 0
+def = 0
+level = 8
+effect = '''
+Unaffected by other card's effects. Cannot be destroyed by battle. You take no battle damage from battles involving this card. This card cannot be Special Summoned by your opponent's card effects. Your opponent cannot use this card as material for a Fusion, Synchro, Xyz, or Link Summon. This face-up card on the field cannot be Tributed. If this card is Special Summoned by the effect of "Divine Resurrection", you win the Duel. If your opponent controls 4 or more monsters (Quick Effect): You can Special Summon this card from your hand.'''
+strings=['Special Summon this card']
+
+[[card]]
+id = 220000002
+setnumber = "KXRF-EN002"
+ot = "custom"
+name = "Michael the Archangel"
+attribute = "light"
+race = "fairy"
+type = "monster effect"
+atk = 0
+def = 0
+level = 7
+effect = '''
+This card cannot be Special Summoned by your opponent's card effects. If your opponent controls 5 monsters in their Main Monster Zones: You can Special Summon this card from your hand, and if you do, add 1 "Raphael the Archangel" from your Deck to your hand. At the start of the Damage Step, if this card is attacked: You take no battle damage from that battle, also your opponent gains 4000 LP at the end of the Damage Step. This effect cannot be negated.'''
+strings=['Special Summon this card and add 1 "Raphael the Archangel" to your hand']
+
+[[card]]
+id = 220000003
+setnumber = "KXRF-EN003"
+ot = "custom"
+name = "Divine Gift"
+attribute = "divine"
+race = "fairy"
+type = "monster effect"
+atk = 2000
+def = 2000
+level = 4
+effect = '''
+Cannot be destroyed by battle. This face-up card on the field cannot be Tributed, except by its own effect. Each time a monster(s) is Summoned: Gain 1000 LP for each. You take no battle damage from battles involving your Defense Position monsters. You can Tribute this card; Special Summon 1 "King of Kings, Lord of Lords" from your hand, GY, or banishment.'''
+strings=['Gain LP','Special Summon 1 "King of Kings, Lord of Lords"']
+
+[[card]]
+id = 220000004
+setnumber = "KXRF-EN004"
+ot = "custom"
+name = "Gabriel the Archangel"
+attribute = "light"
+race = "fairy"
+type = "monster effect"
+atk = 0
+def = 0
+level = 4
+effect = '''
+This card cannot be Special Summoned by your opponent's card effects. If this card is Normal or Special Summoned: You can add 1 "Michael the Archangel" from your Deck to your hand. At the start of the Damage Step, if this card is attacked: You take no battle damage from that battle, also your opponent gains 7000 LP at the end of the Damage Step. This effect cannot be negated.'''
+strings=['Add 1 "Michael the Archangel" to your hand']
+
+[[card]]
+id = 220000005
+setnumber = "KXRF-EN005"
+ot = "custom"
+name = "Raphael the Archangel"
+attribute = "light"
+race = "fairy"
+type = "monster effect"
+atk = 0
+def = 0
+level = 4
+effect = '''
+This card cannot be Special Summoned by your opponent's card effects. If this card is Normal or Special Summoned: You can add 1 "Gabriel the Archangel" from your Deck to your hand. At the start of the Damage Step, if this card is attacked: You take no battle damage from that battle, also your opponent gains 3000 LP at the end of the Damage Step. This effect cannot be negated.'''
+strings=['Add 1 "Gabriel the Archangel" to your hand']
+
+[[card]]
+id = 220000006
+setnumber = "KXRF-EN006"
+ot = "custom"
+name = "Every Knee Will Bow"
+type = "spell field"
+effect = '''
+Unaffected by other cards' effects. This face-up card on the field cannot be Tributed. This card's owner takes no battle or effect damage. This card's owner cannot lose the Duel, except if their LP becomes 0. Neither player can activate cards or effects in response to this card's activation or effect activations. Once per turn, during your Standby Phase, or your opponent's End Phase, if this card is in your GY or banishment: You can add it to your hand.'''
+
+[[card]]
+id = 220000007
+setnumber = "KXRF-EN007"
+ot = "custom"
+name = "Nowhere to Stand"
+type = "spell continuous"
+effect = '''
+Neither player can activate cards or effects in response to this card's activation. Select 2 Monster Zones on the field. Neither player can use the selected zones (even if this card leaves the field).'''
+
+[[card]]
+id = 220000008
+setnumber = "KXRF-EN008"
+ot = "custom"
+name = "Wonderful Counselor"
+type = "spell continuous"
+effect = '''
+Neither player can activate cards or effects in response to this card's activation. Other Spells/Traps you control cannot leave the field because of your opponent's card effects. You take no battle damage. If this card is sent to the GY, or banished, by an opponent's card effect: Inflict 2000 damage to your opponent.'''
+
+[[card]]
+id = 220000009
+setnumber = "KXRF-EN009"
+ot = "custom"
+name = "You Lift Me Up"
+type = "spell continuous"
+effect = '''
+Once per turn, during your Standby Phase, pay 40 LP or destroy this card. Neither player can activate cards or effects in response to this card's activation. This face-up card on the field cannot be Tributed. Cards cannot be sent from your Deck to the GY. Cards in your possession cannot be banished.'''
+strings=['Pay 40 LP to maintain']
+
+[[card]]
+id = 220000010
+setnumber = "KXRF-EN010"
+ot = "custom"
+name = "Divine Assistance"
+type = "spell equip"
+effect = '''
+Once per turn, during the Standby Phase, pay 7 LP or destroy this card. The equipped monster cannot be targeted, or destroyed, by card effects. When the equipped monster declares an attack: Your opponent sends the top 10 cards of their Deck to the GY (or their entire Deck, if less than 10).'''
+strings=['Pay 7 LP to maintain']
+
+[[card]]
+id = 220000011
+setnumber = "KXRF-EN011"
+ot = "custom"
+name = "Trinity Power"
+type = "spell equip"
+effect = '''
+Equip only to "King of Kings, Lord of Lords". At the start of the Damage Step, if the equipped monster battles a monster: Destroy that monster, and if you do, send the equipped monster to the GY at the end of the Battle Phase. This effect and its activation cannot be negated. Once per turn, during your End Phase, if this card is in your GY or banishment: Add it to your hand.'''
+
+[[card]]
+id = 220000012
+setnumber = "KXRF-EN012"
+ot = "custom"
+name = "Be Still"
+type = "spell quickplay"
+effect = '''
+Neither player can activate cards or effects in response to this card's activation. During your opponent's turn, if your opponent Summoned 4 or monsters this turn, you can activate this card from your hand. Pay 1000 LP; Skip a number of your opponent's next Battle Phases, equal to the number of Summons they performed this turn before this effect was activated.'''
+
+[[card]]
+id = 220000013
+setnumber = "KXRF-EN013"
+ot = "custom"
+name = "My Grace is Enough"
+type = "spell quickplay"
+effect = '''
+Neither player can activate cards or effects in response to this card's activation. Draw 7 cards, then your opponent gains 7000 LP and you take 1400 damage. You can only activate 1 "My Grace is Enough" per turn.'''
+
+[[card]]
+id = 220000014
+setnumber = "KXRF-EN014"
+ot = "custom"
+name = "Ultimate Sacrifice"
+type = "spell quickplay"
+effect = '''
+Neither player can activate cards or effects in response to this card’s activation. If you take battle or effect damage, OR if "King of Kings, Lord of Lords" in your GY (Quick Effect): You can discard this card; this card gains the following effects while in the GY.
+• You take no battle or effect damage.
+• You cannot lose the Duel, except if your LP becomes 0.'''
+strings=['Grant Effects']
+
+[[card]]
+id = 220000015
+setnumber = "KXRF-EN015"
+ot = "custom"
+name = "Steps of Faith"
+type = "spell"
+effect = '''
+Neither player can activate cards or effects in response to this card's activation. Draw 4 cards, and if you do, your opponent gains 4000 LP, then if none of those cards were Monster Cards, discard them.'''
+
+[[card]]
+id = 220000016
+setnumber = "KXRF-EN016"
+ot = "custom"
+name = "Good Reaction to Simoochi"
+type = "trap continuous"
+effect = '''
+Any effect that would inflict damage to a player increases their LP by the same amount, instead.'''
+
+[[card]]
+id = 220000017
+setnumber = "KXRF-EN017"
+ot = "custom"
+name = "I Trust in You."
+type = "trap continuous"
+effect = '''
+Neither player can activate cards or effects in response to this card's activation or effect activations. This face-up card on the field cannot be Tributed. Once per turn: You can shuffle any number of cards from either player's GY(s) and/or banishment(s) into the Deck/Extra Deck. If this card is sent to the GY or banished: Shuffle it into the Deck. During your Draw Phase, if this card is in your GY, instead of conducting your normal draw: You can Set this card to your field.'''
+strings=['Shuffle cards into the Deck','Set this card']
+
+[[card]]
+id = 220000018
+setnumber = "KXRF-EN018"
+ot = "custom"
+name = "My True Strength.."
+type = "trap continuous"
+effect = '''
+Activate this card by paying 1000 LP. Neither player can activate cards or effects in response to this card's activation or effect activations. This face-up card on the field cannot be Tributed. Cards in your possession are unaffected by your opponent's card effects. If this card is sent to the GY or banished: Shuffle it into the Deck.'''
+
+[[card]]
+id = 220000019
+setnumber = "KXRF-EN019"
+ot = "custom"
+name = "Power of the Spirit"
+type = "trap continuous"
+effect = '''
+Neither player can activate cards or effects in response to this card's activation or effect activations. Cannot be destroyed by card effects. This face-up card on the field cannot be Tributed. Cards cannot be banished. If this card is sent to the GY, or banished, by an opponent's card effect: Inflict 2000 damage to your opponent.'''
+
+[[card]]
+id = 220000020
+setnumber = "KXRF-EN020"
+ot = "custom"
+name = "Thou Shalt Not..."
+type = "trap continuous"
+effect = '''
+Neither player can activate cards or effects in response to this card's activation or effect activations. This face-up card on the field cannot be Tributed. Your opponent cannot take control of, or attach as material, or Special Summon cards in your possession. If this card is sent to the GY, or banished, by an opponent's card effect: Inflict 2000 damage to your opponent.'''
+
+[[card]]
+id = 220000021
+setnumber = "KXRF-EN021"
+ot = "custom"
+name = "Divine Resurrection"
+type = "trap"
+effect = '''
+Neither player can activate cards or effects in response to this card's activation. If "Every Knee Will Bow" is on the field, "Ultimate Sacrifice" is on the field or in the GY(s), "Lord of Lords, King of Kings" is in your GY: Special Summon 1 "King of Kings, Lord of Lords" from your GY during the 3rd Standby Phase after this card's activation.'''
+
+[[card]]
+id = 220000022
+setnumber = "KXRF-EN022"
+ot = "custom"
+name = "Waking the God"
+type = "trap"
+effect = '''
+Neither player can respond to this card's effect activations. If this Set card leaves the field: Special Summon 1 monster from your Deck or Extra Deck.'''
+
+[[card]]
+id = 220000023
+setnumber = "KXRF-EN023"
+ot = "custom"
+name = "Rebellion Falcon King"
+attribute = "light"
+race = "dragon"
+type = "monster effect xyz"
+atk = 0
+def = 0
+rank = 8
+effect = '''
+3 Level 8 monsters
+Unaffected by other cards' effects. Cannot be used as material for a Fusion, Synchro, Xyz, or Link Summon. This face-up card on the field cannot be Tributed. Cannot be destroyed by battle. Your opponent takes any battle damage you would have taken from battles involving this card. Your opponent takes any effect damage you would have taken.'''
+strings=['']
+
+[[card]]
+id = 220000024
+setnumber = "KXRF-EN024"
+ot = "custom"
+name = "Depart from Me"
+attribute = "light"
+race = "celestial-warrior"
+type = "monster effect xyz"
+atk = 777
+def = 777
+rank = 7
+effect = '''
+Cannot be Xyz Summoned. If your opponent would win the Duel, except if your LP becomes 0 or you are unable to draw a card, you can banish this card from your face-down Extra Deck, instead. While this card is in your banishment, you cannot lose the Duel, except if your LP becomes 0 or you are unable to draw a card.'''
+strings=['']
+
+[[card]]
+id = 220000025
+setnumber = "KXRF-EN025"
+ot = "custom"
+name = "Crooked Cook Mastered"
+attribute = "fire"
+race = "warrior"
+type = "monster effect xyz"
+atk = 2500
+def = 0
+rank = 4
+effect = '''
+2 Level 4 monsters
+Unaffected by other cards' effects. This face-up card on the field cannot be Tributed. This card's controller takes no damage from battles involving their Defense Position monsters. This card's controller takes no effect damage.'''
+strings=['']
