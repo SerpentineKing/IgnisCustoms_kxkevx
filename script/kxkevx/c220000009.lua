@@ -44,16 +44,17 @@ function s.initial_effect(c)
 	e3b:SetCode(EFFECT_CANNOT_DISCARD_DECK)
 	e3b:SetProperty(EFFECT_FLAG_PLAYER_TARGET)
 	e3b:SetRange(LOCATION_SZONE)
-	e3b:SetTargetRange(1,0)
+	e3b:SetTargetRange(1,1)
+	e3b:SetTarget(s.e4lim)
 	c:RegisterEffect(e3b)
 	-- Cards in your possession cannot be banished.
-	-- TODO : Fix (This affects the player's actions, not the cards)
 	local e4=Effect.CreateEffect(c)
 	e4:SetType(EFFECT_TYPE_FIELD)
 	e4:SetCode(EFFECT_CANNOT_REMOVE)
 	e4:SetProperty(EFFECT_FLAG_PLAYER_TARGET)
 	e4:SetRange(LOCATION_SZONE)
-	e4:SetTargetRange(1,0)
+	e4:SetTargetRange(1,1)
+	e4:SetTarget(s.e4lim)
 	c:RegisterEffect(e4)
 end
 -- Helpers
@@ -76,4 +77,7 @@ function s.e1evt(e,tp)
 	else
 		Duel.Destroy(c,REASON_COST)
 	end
+end
+function s.e4lim(e,c,tp,r)
+	return e:GetOwner():GetControler()==tp
 end
