@@ -96,7 +96,7 @@ function s.e3evt(e,tp)
 	e3b2:SetCondition(s.e3con)
 	e3b2:SetTarget(s.e3b2tgt)
 	e3b2:SetOperation(s.e3b2evt)
-	e3b1:SetReset(RESET_PHASE+PHASE_BATTLE)
+	e3b2:SetReset(RESET_PHASE+PHASE_DAMAGE)
 	c:RegisterEffect(e3b2)
 end
 function s.e3b2tgt(e,tp,eg,ep,ev,re,r,rp,chk)
