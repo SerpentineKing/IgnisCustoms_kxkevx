@@ -32,7 +32,7 @@ function s.initial_effect(c)
 	This effect cannot be negated.
 	]]--
 	local e3=Effect.CreateEffect(c)
-	e3:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_F)
+	e3:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_TRIGGER_F)
 	e3:SetCode(EVENT_BATTLE_START)
 	e3:SetProperty(EFFECT_FLAG_CANNOT_DISABLE)
 	e3:SetRange(LOCATION_MZONE)
@@ -65,7 +65,7 @@ function s.e2evt(e,tp)
 	end
 end
 function s.e3con(e,tp)
-	return Duel.GetAttacker()==e:GetHandler()
+	return Duel.GetAttackTarget()==e:GetHandler()
 end
 function s.e3evt(e,tp)
 	local c=e:GetHandler()
@@ -85,7 +85,7 @@ function s.e3evt(e,tp)
 	e3b2:SetProperty(EFFECT_FLAG_PLAYER_TARGET)
 	e3b2:SetTarget(s.e3b2tgt)
 	e3b2:SetOperation(s.e3b2evt)
-	e3b1:SetReset(RESET_PHASE+PHASE_DAMAGE_CAL)
+	e3b1:SetReset(RESET_PHASE+PHASE_DAMAGE)
 	Duel.RegisterEffect(e3b2,tp)
 end
 function s.e3b2tgt(e,tp,eg,ep,ev,re,r,rp,chk)
