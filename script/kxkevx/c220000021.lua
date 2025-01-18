@@ -35,17 +35,21 @@ function s.e1tgt(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 end
 function s.e1evt(e,tp)
 	local c=e:GetHandler()
-	local ct=0
-	--if Duel.GetCurrentPhase()==PHASE_STANDBY then ct=-1 end
+	local ct1=0
+	local ct2=3
+	if Duel.GetCurrentPhase()==PHASE_STANDBY then
+		ct1=-1
+		ct2=4
+	end
 
 	local e1b=Effect.CreateEffect(c)
 	e1b:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)
 	e1b:SetCode(EVENT_PHASE+PHASE_STANDBY)
 	e1b:SetCountLimit(1)
-	e1b:SetLabel(ct)
+	e1b:SetLabel(ct1)
 	e1b:SetCondition(s.e1bcon)
 	e1b:SetOperation(s.e1bevt)
-	e1b:SetReset(RESET_EVENT+RESETS_STANDARD+RESET_PHASE+PHASE_STANDBY,3)
+	e1b:SetReset(RESET_EVENT+RESETS_STANDARD+RESET_PHASE+PHASE_STANDBY,ct2)
 	Duel.RegisterEffect(e1b,tp)
 end
 function s.e1bcon(e)

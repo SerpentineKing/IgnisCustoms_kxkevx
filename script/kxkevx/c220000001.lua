@@ -95,7 +95,6 @@ function s.e6con(e,tp,eg,ep,ev,re)
 	and re:GetHandler():IsCode(220000021)
 end
 function s.e6evt(e,tp)
-	Debug.ShowHint("WIN SUCCESS")
 	Duel.Win(tp,WIN_REASON_FINAL_COUNTDOWN)
 end
 function s.e7tgt(e,tp,eg,ep,ev,re,r,rp,chk)
