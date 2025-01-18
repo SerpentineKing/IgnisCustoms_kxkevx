@@ -31,16 +31,16 @@ function s.initial_effect(c)
 	e2b:SetCode(EFFECT_UNRELEASABLE_NONSUM)
 	c:RegisterEffect(e2b)
 	-- This card’s owner takes no battle or effect damage.
+	-- TODO : Owner, not controler
 	local e3a=Effect.CreateEffect(c)
 	e3a:SetType(EFFECT_TYPE_FIELD)
 	e3a:SetCode(EFFECT_AVOID_BATTLE_DAMAGE)
-	e3a:SetProperty(EFFECT_FLAG_IGNORE_IMMUNE)
+	e3a:SetProperty(EFFECT_FLAG_PLAYER_TARGET)
 	e3a:SetRange(LOCATION_FZONE)
-	e3a:SetTargetRange(LOCATION_MZONE,LOCATION_MZONE)
-	e3a:SetTarget(s.e3tgt)
+	e3a:SetTargetRange(1,0)
 	e3a:SetValue(1)
 	c:RegisterEffect(e3a)
-	-- TODO : Owner, not controler
+	
 	local e3b1=Effect.CreateEffect(c)
 	e3b1:SetType(EFFECT_TYPE_FIELD)
 	e3b1:SetCode(EFFECT_CHANGE_DAMAGE)
