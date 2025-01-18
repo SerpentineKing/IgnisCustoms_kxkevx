@@ -83,5 +83,5 @@ function s.e3blim(e,c,tp)
 end
 function s.e4lim(e,c,tp,r)
 	return (e:GetOwner():GetControler()==tp)
-	or (e:GetHandlerPlayer()==tp)
+	or (e:GetOwner():GetOwner()==tp)
 end
