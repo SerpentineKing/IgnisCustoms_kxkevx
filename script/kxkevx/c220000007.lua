@@ -32,6 +32,8 @@ function s.e1tgt(e,tp,eg,ep,ev,re,r,rp,chk)
 	end
 end
 function s.e1evt(e,tp)
+	local c=e:GetHandler()
+	
 	local e1b=Effect.CreateEffect(c)
 	e1b:SetType(EFFECT_TYPE_FIELD)
 	e1b:SetCode(EFFECT_DISABLE_FIELD)
