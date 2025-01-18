@@ -29,7 +29,6 @@ function s.initial_effect(c)
 	e3:SetValue(s.e3lim)
 	c:RegisterEffect(e3)
 	-- Your opponent cannot use this card as material for a Fusion, Synchro, Xyz, or Link Summon.
-	-- TODO : Fix [Fusion Summons]
 	local e4=Effect.CreateEffect(c)
 	e4:SetType(EFFECT_TYPE_FIELD)
 	e4:SetCode(EFFECT_CANNOT_BE_MATERIAL)
@@ -37,8 +36,16 @@ function s.initial_effect(c)
 	e4:SetRange(LOCATION_MZONE)
 	e4:SetTargetRange(0,1)
 	e4:SetTarget(s.e4tgt)
-	e4:SetValue(aux.cannotmatfilter(SUMMON_TYPE_FUSION,SUMMON_TYPE_SYNCHRO,SUMMON_TYPE_XYZ,SUMMON_TYPE_LINK))
+	e4:SetValue(aux.cannotmatfilter(SUMMON_TYPE_SYNCHRO,SUMMON_TYPE_XYZ,SUMMON_TYPE_LINK))
 	c:RegisterEffect(e4)
+
+	local e4b=Effect.CreateEffect(c)
+	e4b:SetType(EFFECT_TYPE_SINGLE)
+	e4b:SetCode(EFFECT_CANNOT_BE_FUSION_MATERIAL)
+	e4b:SetProperty(EFFECT_FLAG_SINGLE_RANGE)
+	e4b:SetRange(LOCATION_MZONE)
+	e4b:SetValue(s.e4blim)
+	c:RegisterEffect(e4b)
 	-- This face-up card on the field cannot be Tributed.
 	local e5a=Effect.CreateEffect(c)
 	e5a:SetType(EFFECT_TYPE_SINGLE)
@@ -89,6 +96,11 @@ function s.e3lim(e,se)
 end
 function s.e4tgt(e,c)
 	return c==e:GetHandler()
+end
+function s.e4blim(e,c)
+	if not c then return false end
+
+	return not c:IsOwner()==e:GetOwner()
 end
 function s.e6con(e,tp,eg,ep,ev,re)
 	return re
