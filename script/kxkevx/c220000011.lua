@@ -81,11 +81,13 @@ function s.e1evt(e,tp)
 	end
 end
 function s.e1bcon(e,tp)
+	local tc=e:GetLabelObject()
+
 	local o=0
-	if (tc:GetFlagEffectLabel(id)==e:GetLabel()) then o=1 end
+	if tc then o=1 end
+	if (tc:GetFlagEffectLabel(id)==e:GetLabel()) then o=2 end
 	Debug.ShowHint(""..o)
 
-	local tc=e:GetLabelObject()
 	return tc:GetFlagEffectLabel(id)==e:GetLabel()
 end
 function s.e1bevt(e,tp)
