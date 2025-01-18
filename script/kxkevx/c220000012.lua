@@ -82,7 +82,9 @@ function s.ge2evt(e,tp,eg)
 		Duel.RegisterFlagEffect(tc:GetSummonPlayer(),id,RESET_PHASE+PHASE_END,0,1)
 	end
 end
-function s.e2con(e,tp)
+function s.e2con(e)
+	local tp=e:GetHandlerPlayer()
+	
 	return Duel.GetTurnPlayer()==1-tp
 	and Duel.GetFlagEffect(1-tp,id)>=4
 end
