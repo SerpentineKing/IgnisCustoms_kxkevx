@@ -49,6 +49,12 @@ function s.initial_effect(c)
 	local e4b=e4a:Clone()
 	e4b:SetCode(EFFECT_NO_EFFECT_DAMAGE)
 	c:RegisterEffect(e4b)
+	-- Cannot be destroyed by battle.
+	local e5=Effect.CreateEffect(c)
+	e5:SetType(EFFECT_TYPE_SINGLE)
+	e5:SetCode(EFFECT_INDESTRUCTABLE_BATTLE)
+	e5:SetValue(1)
+	c:RegisterEffect(e5)
 end
 -- Helpers
 function s.e1con(e)

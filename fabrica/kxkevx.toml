@@ -246,7 +246,6 @@ rank = 8
 effect = '''
 3 Level 8 monsters
 Unaffected by other cards' effects. Cannot be used as material for a Fusion, Synchro, Xyz, or Link Summon. This face-up card on the field cannot be Tributed. Cannot be destroyed by battle. Your opponent takes any battle damage you would have taken from battles involving this card. Your opponent takes any effect damage you would have taken.'''
-strings=['']
 
 [[card]]
 id = 220000024
@@ -261,7 +260,6 @@ def = 777
 rank = 7
 effect = '''
 Cannot be Xyz Summoned. If your opponent would win the Duel, except if your LP becomes 0 or you are unable to draw a card, you can banish this card from your face-down Extra Deck, instead. While this card is in your banishment, you cannot lose the Duel, except if your LP becomes 0 or you are unable to draw a card.'''
-strings=['']
 
 [[card]]
 id = 220000025
@@ -276,5 +274,4 @@ def = 0
 rank = 4
 effect = '''
 2 Level 4 monsters
-Unaffected by other cards' effects. This face-up card on the field cannot be Tributed. This card's controller takes no damage from battles involving their Defense Position monsters. This card's controller takes no effect damage.'''
-strings=['']
+Unaffected by other cards' effects. Cannot be destroyed by battle. This face-up card on the field cannot be Tributed. This card's controller takes no damage from battles involving their Defense Position monsters. This card's controller takes no effect damage.'''
