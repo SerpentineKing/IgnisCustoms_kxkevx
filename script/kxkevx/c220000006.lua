@@ -103,7 +103,7 @@ end
 function s.e3tgt(e,c)
 	return e:GetHandler():GetOwner()==c:GetControler()
 end
-function s.e4val(e,re,val,r)
+function s.e3bval(e,re,val,r)
 	if (r&REASON_EFFECT)~=0 then
 		return 0
 	else
