@@ -31,12 +31,10 @@ function s.initial_effect(c)
 
 	local e2b=Effect.CreateEffect(c)
 	e2b:SetType(EFFECT_TYPE_FIELD)
-	e2b:SetCode(EFFECT_CANNOT_BE_MATERIAL)
-	e2b:SetProperty(EFFECT_FLAG_PLAYER_TARGET)
+	e2b:SetCode(EFFECT_CANNOT_BE_XYZ_MATERIAL)
 	e2b:SetRange(LOCATION_SZONE)
-	e2b:SetTargetRange(0,1)
-	e2b:SetTarget(s.e2btgt)
-	e2b:SetValue(aux.cannotmatfilter(SUMMON_TYPE_XYZ))
+	e2c:SetTargetRange(LOCATION_HAND+LOCATION_DECK+LOCATION_ONFIELD+LOCATION_GRAVE+LOCATION_EXTRA,0)
+	e2b:SetValue(s.e2blim)
 	c:RegisterEffect(e2b)
 
 	local e2c=Effect.CreateEffect(c)
@@ -73,8 +71,10 @@ function s.e0tgt(e,tp,eg,ep,ev,re,r,rp,chk)
 		Duel.SetChainLimit(aux.FALSE)
 	end
 end
-function s.e2btgt(e,c)
-	return c:GetOwner()~=e:GetHandlerPlayer()
+function s.e2blim(e,c)
+	if not c then return false end
+
+	return not c:IsOwner()==e:GetOwner()
 end
 function s.e2clim(e,se)
 	return e:GetHandlerPlayer()==se:GetHandlerPlayer()
