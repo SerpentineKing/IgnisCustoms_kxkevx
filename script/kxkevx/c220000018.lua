@@ -24,6 +24,7 @@ function s.initial_effect(c)
 	e1b:SetCode(EFFECT_UNRELEASABLE_NONSUM)
 	c:RegisterEffect(e1b)
 	-- Cards in your possession are unaffected by your opponent’s card effects.
+	-- TODO : Fix [Facedown Cards]
 	local e2=Effect.CreateEffect(c)
 	e2:SetDescription(3110)
 	e2:SetType(EFFECT_TYPE_FIELD)
