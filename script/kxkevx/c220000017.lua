@@ -140,7 +140,7 @@ function s.e4tgt(e,tp,eg,ep,ev,re,r,rp,chk)
 		e4b:SetTargetRange(1,0)
 		e4b:SetReset(RESET_PHASE+PHASE_DRAW)
 		e4b:SetValue(0)
-		Duel.RegisterEffect(e1,tp)
+		Duel.RegisterEffect(e4b,tp)
 	end
 
 	Duel.SetOperationInfo(0,CATEGORY_LEAVE_GRAVE,c,1,0,0)
