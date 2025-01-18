@@ -36,6 +36,7 @@ end
 function s.e1evt(e,tp)
 	local c=e:GetHandler()
 	local ct=0
+	if Duel.GetCurrentPhase()==PHASE_STANDBY then ct=-1 end
 
 	local e1b=Effect.CreateEffect(c)
 	e1b:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)

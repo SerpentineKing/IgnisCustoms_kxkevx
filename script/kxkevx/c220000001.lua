@@ -53,7 +53,7 @@ function s.initial_effect(c)
 	c:RegisterEffect(e5b)
 	-- If this card is Special Summoned by the effect of “Divine Resurrection”, you win the Duel.
 	local e6=Effect.CreateEffect(c)
-	e6:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_F)
+	e6:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_CONTINUOUS)
 	e6:SetCode(EVENT_SPSUMMON_SUCCESS)
 	e6:SetCondition(s.e6con)
 	e6:SetOperation(s.e6evt)
