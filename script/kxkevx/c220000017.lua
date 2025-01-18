@@ -98,7 +98,11 @@ function s.e2evt(e,tp)
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TODECK)
 	local g=Duel.SelectMatchingCard(tp,s.e2fil,tp,LOCATION_GRAVE+LOCATION_REMOVED,LOCATION_GRAVE+LOCATION_REMOVED,1,ct,nil)
 	if g:GetCount()>0 then
-		Duel.SendtoDeck(g,nil,SEQ_DECKSHUFFLE,REASON_EFFECT)
+		Duel.SendtoDeck(g,nil,0,REASON_EFFECT)
+		local og=Duel.GetOperatedGroup()
+		if og:IsExists(Card.IsLocation,1,nil,LOCATION_DECK) then
+			Duel.ShuffleDeck(tp)
+		end
 	end
 end
 function s.e3tgt(e,tp,eg,ep,ev,re,r,rp,chk)
