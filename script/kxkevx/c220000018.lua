@@ -25,11 +25,14 @@ function s.initial_effect(c)
 	c:RegisterEffect(e1b)
 	-- Cards in your possession are unaffected by your opponent’s card effects.
 	local e2=Effect.CreateEffect(c)
+	e2:SetDescription(3110)
 	e2:SetType(EFFECT_TYPE_FIELD)
 	e2:SetCode(EFFECT_IMMUNE_EFFECT)
+	e2:SetProperty(EFFECT_FLAG_CLIENT_HINT)
 	e2:SetRange(LOCATION_SZONE)
 	e2:SetTargetRange(LOCATION_ALL,0)
 	e2:SetValue(s.e2val)
+	e2:SetOwnerPlayer(tp)
 	c:RegisterEffect(e2)
 	--[[
 	If this card is sent to the GY or banished:
@@ -66,7 +69,7 @@ function s.e0tgt(e,tp,eg,ep,ev,re,r,rp,chk)
 	end
 end
 function s.e2val(e,re)
-	return re:GetOwner()~=e:GetOwner()
+	return e:GetOwnerPlayer()~=re:GetOwnerPlayer()
 end
 function s.e3tgt(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return true end
