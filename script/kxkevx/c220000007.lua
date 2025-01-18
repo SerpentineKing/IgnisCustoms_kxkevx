@@ -18,7 +18,7 @@ function s.initial_effect(c)
 	e2:SetCode(EFFECT_DISABLE_FIELD)
 	e2:SetOperation(s.e2evt)
 	e2:SetLabelObject(e1)
-	Duel.RegisterEffect(e2,tp)
+	Duel.RegisterEffect(e2,0)
 end
 -- Helpers
 function s.e1tgt(e,tp,eg,ep,ev,re,r,rp,chk)
