@@ -56,7 +56,7 @@ function s.e1tgt(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 		return Duel.IsExistingTarget(s.e1fil,tp,LOCATION_GRAVE,0,1,nil)
 	end
 
-	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_TODECK)
+	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_CONFIRM)
 	local g=Duel.SelectTarget(tp,s.e1fil,tp,LOCATION_GRAVE,0,1,1,nil)
 
 	if e:IsHasType(EFFECT_TYPE_IGNITION) or e:IsHasType(EFFECT_TYPE_FIELD) then
@@ -66,6 +66,8 @@ end
 function s.e1evt(e,tp)
 	local tc=Duel.GetFirstTarget()
 	if tc:IsRelateToEffect(e) then
+		local c=e:GetHandler()
+
 		local e1b1=Effect.CreateEffect(c)
 		e1b1:SetType(EFFECT_TYPE_FIELD)
 		e1b1:SetCode(EFFECT_AVOID_BATTLE_DAMAGE)
