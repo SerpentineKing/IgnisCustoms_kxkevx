@@ -35,22 +35,32 @@ function s.e1tgt(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 end
 function s.e1evt(e,tp)
 	local c=e:GetHandler()
-	
+	local ct=0
+
 	local e1b=Effect.CreateEffect(c)
 	e1b:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)
 	e1b:SetCode(EVENT_PHASE+PHASE_STANDBY)
 	e1b:SetCountLimit(1)
-
+	e1b:SetLabel(ct)
+	e1b:SetCondition(s.e1bcon)
 	e1b:SetOperation(s.e1bevt)
 	e1b:SetReset(RESET_EVENT+RESETS_STANDARD+RESET_PHASE+PHASE_STANDBY,3)
 	Duel.RegisterEffect(e1b,tp)
+end
+function s.e1bcon(e)
+	e:SetLabel(e:GetLabel()+1)
+
+	if e:GetLabel()==3 then
+		return true
+	end
+	return false
 end
 function s.e1bfil(c,e,tp)
 	return c:IsCode(220000001)
 	and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
 end
 function s.e1bevt(e,tp)
-	if not Duel.GetLocationCount(tp,LOCATION_MZONE)>0 then return end
+	if Duel.GetLocationCount(tp,LOCATION_MZONE)<=0 then return end
 
 	Duel.Hint(HINT_SELECTMSG,tp,HINTMSG_SPSUMMON)
 
