@@ -3,17 +3,17 @@ local s,id,o=GetID()
 -- c220000007
 function s.initial_effect(c)
 	-- [Activation]
+	-- Neither player can activate cards or effects in response to this card’s activation.
+	--[[
+	Select 2 Monster Zones on the field.
+	Neither player can use the selected zones (even if this card leaves the field).
+	]]--
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_ACTIVATE)
 	e1:SetCode(EVENT_FREE_CHAIN)
 	e1:SetTarget(s.e1tgt)
 	e1:SetOperation(s.e1evt)
 	c:RegisterEffect(e1)
-	-- Neither player can activate cards or effects in response to this card’s activation.
-	--[[
-	Select 2 Monster Zones on the field.
-	Neither player can use the selected zones (even if this card leaves the field).
-	]]--
 end
 -- Helpers
 function s.e1tgt(e,tp,eg,ep,ev,re,r,rp,chk)
