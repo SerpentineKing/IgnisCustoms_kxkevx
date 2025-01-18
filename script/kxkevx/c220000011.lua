@@ -64,31 +64,17 @@ function s.e1evt(e,tp)
 	local ec=c:GetEquipTarget()
 	local tc=ec:GetBattleTarget()
 	if tc:IsRelateToBattle() and Duel.Destroy(tc,REASON_EFFECT)>0 then
-		local fid=c:GetFieldID()
-
 		local e1b=Effect.CreateEffect(c)
 		e1b:SetCategory(CATEGORY_TOGRAVE)
 		e1b:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)
 		e1b:SetCode(EVENT_PHASE+PHASE_BATTLE)
 		e1b:SetProperty(EFFECT_FLAG_IGNORE_IMMUNE)
 		e1b:SetCountLimit(1)
-		e1b:SetLabel(fid)
 		e1b:SetLabelObject(ec)
-		e1b:SetCondition(s.e1bcon)
 		e1b:SetOperation(s.e1bevt)
 		e1b:SetReset(RESET_PHASE+PHASE_END)
 		Duel.RegisterEffect(e1b,tp)
 	end
-end
-function s.e1bcon(e,tp)
-	local tc=e:GetLabelObject()
-
-	local o=0
-	if tc then o=1 end
-	if (tc:GetFlagEffectLabel(id)==e:GetLabel()) then o=2 end
-	Debug.ShowHint(""..o)
-
-	return tc:GetFlagEffectLabel(id)==e:GetLabel()
 end
 function s.e1bevt(e,tp)
 	local tc=e:GetLabelObject()
