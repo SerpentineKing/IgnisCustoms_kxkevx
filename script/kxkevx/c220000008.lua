@@ -23,9 +23,9 @@ function s.initial_effect(c)
 	local e1b=Effect.CreateEffect(c)
 	e1b:SetType(EFFECT_TYPE_FIELD)
 	e1b:SetCode(EFFECT_CANNOT_TO_GRAVE)
-	e1b:SetProperty(EFFECT_FLAG_IGNORE_IMMUNE)
+	e1b:SetProperty(EFFECT_FLAG_PLAYER_TARGET+EFFECT_FLAG_IGNORE_IMMUNE)
 	e1b:SetRange(LOCATION_SZONE)
-	e1b:SetTargetRange(1,1)
+	e1b:SetTargetRange(0,1)
 	e1b:SetTarget(s.e1tgt)
 	c:RegisterEffect(e1b)
 
@@ -76,11 +76,10 @@ function s.e0tgt(e,tp,eg,ep,ev,re,r,rp,chk)
 		Duel.SetChainLimit(aux.FALSE)
 	end
 end
-function s.e1tgt(e,c,tp,r)
+function s.e1tgt(e,c)
 	return c~=e:GetHandler()
 	and c:IsLocation(LOCATION_SZONE)
 	and c:IsControler(e:GetHandlerPlayer())
-	and e:GetHandler():GetReasonPlayer()==1-tp
 end
 function s.e3con(e,tp)
 	local c=e:GetHandler()
