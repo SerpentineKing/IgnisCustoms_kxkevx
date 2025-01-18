@@ -8,6 +8,7 @@ function s.initial_effect(c)
 	local e0=Effect.CreateEffect(c)
 	e0:SetType(EFFECT_TYPE_ACTIVATE)
 	e0:SetCode(EVENT_FREE_CHAIN)
+	e0:SetCost(s.e0cst)
 	e0:SetTarget(s.e0tgt)
 	c:RegisterEffect(e0)
 	-- This face-up card on the field cannot be Tributed.
@@ -49,6 +50,15 @@ function s.initial_effect(c)
 	c:RegisterEffect(e3b)
 end
 -- Helpers
+function s.e0cst(e,tp,eg,ep,ev,re,r,rp,chk)
+	local ct=1000
+
+	if chk==0 then
+		return Duel.CheckLPCost(tp,ct)
+	end
+	
+	Duel.PayLPCost(tp,ct)
+end
 function s.e0tgt(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return true end
 
