@@ -45,7 +45,7 @@ function s.e1cst(e,tp,eg,ep,ev,re,r,rp,chk)
 	Duel.SendtoGrave(c,REASON_COST+REASON_DISCARD)
 end
 function s.e1fil(c)
-	return c:IsCode(220000014)
+	return c:IsCode(220000001)
 end
 function s.e1tgt(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 	if chkc then
