@@ -90,14 +90,13 @@ function s.e3evt(e,tp)
 
 	local e3b2=Effect.CreateEffect(c)
 	e3b2:SetCategory(CATEGORY_RECOVER)
-	e3b2:SetType(EFFECT_TYPE_SINGLE+EFFECT_TYPE_TRIGGER_F)
+	e3b2:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)
 	e3b2:SetCode(EVENT_DAMAGE_STEP_END)
-	e3b2:SetProperty(EFFECT_FLAG_PLAYER_TARGET+EFFECT_FLAG_CANNOT_DISABLE+EFFECT_FLAG_CANNOT_INACTIVATE+EFFECT_FLAG_CANNOT_NEGATE)
-	e3b2:SetCondition(s.e3con)
+	e3b2:SetProperty(EFFECT_FLAG_PLAYER_TARGET)
 	e3b2:SetTarget(s.e3b2tgt)
 	e3b2:SetOperation(s.e3b2evt)
 	e3b2:SetReset(RESET_PHASE+PHASE_DAMAGE)
-	c:RegisterEffect(e3b2)
+	Duel.RegisterEffect(e3b2,tp)
 end
 function s.e3b2tgt(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return true end
