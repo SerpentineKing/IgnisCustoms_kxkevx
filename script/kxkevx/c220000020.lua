@@ -70,7 +70,7 @@ function s.e0tgt(e,tp,eg,ep,ev,re,r,rp,chk)
 	end
 end
 function s.e2btgt(e,c)
-	return c:GetOwner()==e:GetHandlerPlayer()
+	return c:GetOwner()~=e:GetHandlerPlayer()
 end
 function s.e3con(e,tp)
 	local c=e:GetHandler()
