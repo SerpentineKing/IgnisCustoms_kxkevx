@@ -16,24 +16,29 @@ function s.initial_effect(c)
 	e1a:SetProperty(EFFECT_FLAG_IGNORE_IMMUNE+EFFECT_FLAG_SET_AVAILABLE)
 	e1a:SetTargetRange(LOCATION_SZONE,0)
 	e1a:SetRange(LOCATION_SZONE)
-	e1a:SetCondition(s.e1con)
 	e1a:SetTarget(s.e1tgt)
-	e1a:SetValue(1)
+	e1a:SetValue(aux.indoval)
 	c:RegisterEffect(e1a)
 
-	local e1b=e1a:Clone()
+	local e1b=Effect.CreateEffect(c)
+	e1b:SetType(EFFECT_TYPE_FIELD)
 	e1b:SetCode(EFFECT_CANNOT_TO_GRAVE)
+	e1b:SetProperty(EFFECT_FLAG_IGNORE_IMMUNE)
+	e1b:SetTargetRange(LOCATION_SZONE,0)
+	e1b:SetRange(LOCATION_SZONE)
+	e1b:SetCondition(s.e1con)
+	e1b:SetTarget(s.e1tgt)
 	c:RegisterEffect(e1b)
 
-	local e1c=e1a:Clone()
+	local e1c=e1b:Clone()
 	e1c:SetCode(EFFECT_CANNOT_REMOVE)
 	c:RegisterEffect(e1c)
 
-	local e1d=e1a:Clone()
+	local e1d=e1b:Clone()
 	e1d:SetCode(EFFECT_CANNOT_TO_HAND)
 	c:RegisterEffect(e1d)
 
-	local e1e=e1a:Clone()
+	local e1e=e1b:Clone()
 	e1e:SetCode(EFFECT_CANNOT_TO_DECK)
 	c:RegisterEffect(e1e)
 	-- You take no battle damage.
@@ -72,9 +77,8 @@ function s.e0tgt(e,tp,eg,ep,ev,re,r,rp,chk)
 		Duel.SetChainLimit(aux.FALSE)
 	end
 end
-function s.e1con(e)
-	local c=e:GetHandler()
-	return c:GetReasonPlayer()~=c:GetOwner()
+function s.e1con(e,tp)
+	return e:GetHandler():GetReasonPlayer()==1-tp
 end
 function s.e1tgt(e,c)
 	return c~=e:GetHandler()
