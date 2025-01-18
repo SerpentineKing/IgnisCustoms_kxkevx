@@ -32,7 +32,6 @@ function s.initial_effect(c)
 	e2:SetRange(LOCATION_SZONE)
 	e2:SetTargetRange(LOCATION_ALL,0)
 	e2:SetValue(s.e2val)
-	e2:SetOwnerPlayer(tp)
 	c:RegisterEffect(e2)
 	--[[
 	If this card is sent to the GY or banished:
