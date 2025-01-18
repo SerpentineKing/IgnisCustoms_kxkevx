@@ -34,6 +34,8 @@ function s.e1tgt(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 	end
 end
 function s.e1evt(e,tp)
+	local c=e:GetHandler()
+	
 	local e1b=Effect.CreateEffect(c)
 	e1b:SetType(EFFECT_TYPE_FIELD+EFFECT_TYPE_CONTINUOUS)
 	e1b:SetCode(EVENT_PHASE+PHASE_STANDBY)
