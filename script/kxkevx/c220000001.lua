@@ -31,10 +31,12 @@ function s.initial_effect(c)
 	-- Your opponent cannot use this card as material for a Fusion, Synchro, Xyz, or Link Summon.
 	-- TODO : Opp. Only
 	local e4=Effect.CreateEffect(c)
-	e4:SetType(EFFECT_TYPE_SINGLE)
+	e4:SetType(EFFECT_TYPE_FIELD)
 	e4:SetCode(EFFECT_CANNOT_BE_MATERIAL)
 	e4:SetProperty(EFFECT_FLAG_CANNOT_DISABLE+EFFECT_FLAG_UNCOPYABLE+EFFECT_FLAG_PLAYER_TARGET)
+	e4:SetRange(LOCATION_MZONE)
 	e4:SetTargetRange(0,1)
+	e4:SetTarget(s.e4tgt)
 	e4:SetValue(aux.cannotmatfilter(SUMMON_TYPE_FUSION,SUMMON_TYPE_SYNCHRO,SUMMON_TYPE_XYZ,SUMMON_TYPE_LINK))
 	c:RegisterEffect(e4)
 	-- This face-up card on the field cannot be Tributed.
@@ -86,6 +88,9 @@ function s.e1val(e,re)
 end
 function s.e3lim(e,se)
 	return e:GetHandlerPlayer()==se:GetHandlerPlayer()
+end
+function s.e4tgt(e,c)
+	return c~=e:GetHandler()
 end
 function s.e6con(e,tp,eg,ep,ev,re)
 	return re
