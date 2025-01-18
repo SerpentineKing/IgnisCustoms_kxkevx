@@ -2,7 +2,7 @@
 local s,id,o=GetID()
 -- c220000001
 function s.initial_effect(c)
-	-- Unaffected by other card’s effects, except “Trinity Power”.
+	-- Unaffected by other card’s effects.
 	local e1=Effect.CreateEffect(c)
 	e1:SetType(EFFECT_TYPE_SINGLE)
 	e1:SetCode(EFFECT_IMMUNE_EFFECT)
@@ -81,10 +81,7 @@ function s.e1con(e)
 	return not e:GetHandler():IsStatus(STATUS_BATTLE_DESTROYED)
 end
 function s.e1val(e,re)
-	local rc=re:GetOwner()
-
 	return re:GetOwner()~=e:GetOwner()
-	and not rc:IsCode(220000011)
 end
 function s.e3lim(e,se)
 	return e:GetHandlerPlayer()==se:GetHandlerPlayer()
