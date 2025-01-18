@@ -45,7 +45,6 @@ function s.initial_effect(c)
 	e3b:SetProperty(EFFECT_FLAG_PLAYER_TARGET)
 	e3b:SetRange(LOCATION_SZONE)
 	e3b:SetTargetRange(LOCATION_DECK,0)
-	--e3b:SetTarget(s.e3blim)
 	c:RegisterEffect(e3b)
 	-- Cards in your possession cannot be banished.
 	local e4=Effect.CreateEffect(c)
@@ -54,7 +53,6 @@ function s.initial_effect(c)
 	e4:SetProperty(EFFECT_FLAG_PLAYER_TARGET)
 	e4:SetRange(LOCATION_SZONE)
 	e4:SetTargetRange(LOCATION_HAND+LOCATION_DECK+LOCATION_ONFIELD+LOCATION_GRAVE+LOCATION_EXTRA,0)
-	--e4:SetTarget(s.e4lim)
 	c:RegisterEffect(e4)
 end
 -- Helpers
@@ -77,11 +75,4 @@ function s.e1evt(e,tp)
 	else
 		Duel.Destroy(c,REASON_COST)
 	end
-end
-function s.e3blim(e,c,tp)
-	return e:GetOwner():GetControler()==tp
-end
-function s.e4lim(e,c,tp,r)
-	return (e:GetOwner():GetControler()==tp)
-	or (e:GetOwner():GetOwner()==tp)
 end
