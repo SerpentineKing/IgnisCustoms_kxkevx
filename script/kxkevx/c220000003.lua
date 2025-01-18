@@ -42,6 +42,7 @@ function s.initial_effect(c)
 	e4a:SetCode(EVENT_SUMMON_SUCCESS)
 	e4a:SetProperty(EFFECT_FLAG_DELAY)
 	e4a:SetRange(LOCATION_MZONE)
+	e4a:SetCondition(s.e4con)
 	e4a:SetTarget(s.e4tgt)
 	e4a:SetOperation(s.e4evt)
 	c:RegisterEffect(e4a)
@@ -69,10 +70,17 @@ function s.initial_effect(c)
 end
 -- Helpers
 function s.e2val(e,c)
-	return not c:IsCode(id)
+	return c~=e:GetHandler()
 end
 function s.e3tgt(e,c)
 	return c:IsDefensePos()
+end
+function s.e4fil(c,ec)
+	return c~=ec
+end
+function s.e4con(e,tp,eg)
+	local c=e:GetHandler()
+	return eg:IsExists(s.e4fil,1,nil,c)
 end
 function s.e4tgt(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then
@@ -94,7 +102,7 @@ end
 function s.e5cst(e,tp,eg,ep,ev,re,r,rp,chk)
 	local c=e:GetHandler()
 	if chk==0 then
-		return c:IsReleasable()
+		return true --c:IsReleasable()
 	end
 
 	Duel.Release(c,REASON_COST)
