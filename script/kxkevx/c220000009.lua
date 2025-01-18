@@ -47,6 +47,7 @@ function s.initial_effect(c)
 	e3b:SetTargetRange(1,0)
 	c:RegisterEffect(e3b)
 	-- Cards in your possession cannot be banished.
+	-- TODO : Fix (This affects the player's actions, not the cards)
 	local e4=Effect.CreateEffect(c)
 	e4:SetType(EFFECT_TYPE_FIELD)
 	e4:SetCode(EFFECT_CANNOT_REMOVE)

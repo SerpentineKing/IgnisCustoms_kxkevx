@@ -78,7 +78,7 @@ function s.e1con(e)
 	return not e:GetHandler():IsStatus(STATUS_BATTLE_DESTROYED)
 end
 function s.e1val(e,re)
-	local rc=re:GetHandler()
+	local rc=re:GetOwner()
 
 	return re:GetOwner()~=e:GetOwner()
 	and not rc:IsCode(220000011)
