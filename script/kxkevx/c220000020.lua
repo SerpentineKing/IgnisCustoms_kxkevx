@@ -65,7 +65,9 @@ function s.e0tgt(e,tp,eg,ep,ev,re,r,rp,chk)
 end
 function s.e3con(e,tp)
 	local c=e:GetHandler()
-	return c:IsReason(REASON_EFFECT) and c:GetReasonPlayer()~=1-tp
+	
+	return c:IsReason(REASON_EFFECT)
+	and c:GetReasonPlayer()==1-tp
 end
 function s.e3tgt(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return true end
