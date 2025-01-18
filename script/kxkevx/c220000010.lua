@@ -18,7 +18,7 @@ function s.initial_effect(c)
 	e2a:SetType(EFFECT_TYPE_EQUIP)
 	e2a:SetCode(EFFECT_CANNOT_BE_EFFECT_TARGET)
 	e2a:SetProperty(EFFECT_FLAG_IGNORE_IMMUNE)
-	e2a:SetValue(aux.tgoval)
+	e2a:SetValue(1)
 	c:RegisterEffect(e2a)
 
 	local e2b=e2a:Clone()
@@ -56,8 +56,8 @@ end
 function s.e3tgt(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return true end
 
-	Duel.SetOperationInfo(0,CATEGORY_DECKDES,nil,0,tp,10)
+	Duel.SetOperationInfo(0,CATEGORY_DECKDES,nil,0,1-tp,10)
 end
 function s.e3evt(e,tp)
-	Duel.DiscardDeck(tp,10,REASON_EFFECT)
+	Duel.DiscardDeck(1-tp,10,REASON_EFFECT)
 end
