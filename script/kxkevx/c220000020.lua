@@ -33,14 +33,18 @@ function s.initial_effect(c)
 	e2b:SetType(EFFECT_TYPE_FIELD)
 	e2b:SetCode(EFFECT_CANNOT_BE_MATERIAL)
 	e2b:SetProperty(EFFECT_FLAG_PLAYER_TARGET)
-	e2b:SetRange(LOCATION_MZONE)
+	e2b:SetRange(LOCATION_SZONE)
 	e2b:SetTargetRange(0,1)
 	e2b:SetTarget(s.e2btgt)
 	e2b:SetValue(aux.cannotmatfilter(SUMMON_TYPE_XYZ))
 	c:RegisterEffect(e2b)
 
-	local e2c=e2a:Clone()
-	e2c:SetCode(EFFECT_CANNOT_SPECIAL_SUMMON)
+	local e2c=Effect.CreateEffect(c)
+	e2c:SetType(EFFECT_TYPE_FIELD)
+	e2c:SetCode(EFFECT_SPSUMMON_CONDITION)
+	e2c:SetRange(LOCATION_SZONE)
+	e2c:SetTargetRange(LOCATION_HAND+LOCATION_DECK+LOCATION_ONFIELD+LOCATION_GRAVE+LOCATION_EXTRA,0)
+	e2c:SetValue(s.e2clim)
 	c:RegisterEffect(e2c)
 	--[[
 	If this card is sent to the GY, or banished, by an opponent’s card effect:
@@ -71,6 +75,9 @@ function s.e0tgt(e,tp,eg,ep,ev,re,r,rp,chk)
 end
 function s.e2btgt(e,c)
 	return c:GetOwner()~=e:GetHandlerPlayer()
+end
+function s.e2clim(e,se)
+	return e:GetHandlerPlayer()==se:GetHandlerPlayer()
 end
 function s.e3con(e,tp)
 	local c=e:GetHandler()
