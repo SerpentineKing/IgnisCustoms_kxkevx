@@ -72,15 +72,16 @@ function s.e0tgt(e,tp,eg,ep,ev,re,r,rp,chk)
 		Duel.SetChainLimit(aux.FALSE)
 	end
 end
-function s.e1con(e,tp)
-	return e:GetHandler():GetReasonPlayer()==1-tp
+function s.e1con(e)
+	local c=e:GetHandler()
+	return c:GetReasonPlayer()~=c:GetOwner()
 end
 function s.e1tgt(e,c)
 	return c~=e:GetHandler()
 end
-function s.e3con(e)
+function s.e3con(e,tp)
 	local c=e:GetHandler()
-	return c:IsReason(REASON_EFFECT) and c:GetReasonPlayer()~=c:GetOwner()
+	return c:IsReason(REASON_EFFECT) and c:GetReasonPlayer()~=1-tp
 end
 function s.e3tgt(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return true end
