@@ -48,10 +48,10 @@ function s.e1fil(c)
 end
 function s.e1tgt(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then
-		return Duel.IsExistingTarget(s.e1fil,tp,LOCATION_GRAVE,0,1,nil)
+		return Duel.IsExistingMatchingCard(s.e1fil,tp,LOCATION_GRAVE,0,1,nil)
 	end
 
-	if e:IsHasType(EFFECT_TYPE_QUICK_O) or e:IsHasType(EFFECT_TYPE_FIELD) then
+	if e:IsHasType(EFFECT_TYPE_QUICK_O) then
 		Duel.SetChainLimit(aux.FALSE)
 	end
 end
@@ -99,7 +99,7 @@ end
 function s.e1btgt(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return true end
 
-	if e:IsHasType(EFFECT_TYPE_QUICK_O) or e:IsHasType(EFFECT_TYPE_FIELD) then
+	if e:IsHasType(EFFECT_TYPE_TRIGGER_O) then
 		Duel.SetChainLimit(aux.FALSE)
 	end
 end
