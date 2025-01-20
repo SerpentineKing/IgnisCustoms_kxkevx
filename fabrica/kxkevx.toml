@@ -154,7 +154,7 @@ ot = "custom"
 name = "Ultimate Sacrifice"
 type = "spell quickplay"
 effect = '''
-Neither player can activate cards or effects in response to this card’s activation. If you take battle or effect damage, OR if "King of Kings, Lord of Lords" in your GY (Quick Effect): You can discard this card; this card gains the following effects while in the GY.
+Neither player can activate cards or effects in response to this card’s activation. If you take battle or effect damage, OR if "King of Kings, Lord of Lords" in your GY (Quick Effect): You can discard this card; this card gains the following effects while in the GY or banishment.
 • You take no battle or effect damage.
 • You cannot lose the Duel, except if your LP becomes 0.'''
 strings=['Grant Effects']
