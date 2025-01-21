@@ -40,8 +40,8 @@ atk = 2000
 def = 2000
 level = 4
 effect = '''
-Cannot be destroyed by battle. This face-up card on the field cannot be Tributed, except by its own effect. Each time a monster(s) is Summoned: Gain 1000 LP for each. You take no battle damage from battles involving your Defense Position monsters. You can Tribute this card; Special Summon 1 "King of Kings, Lord of Lords" from your hand, GY, or banishment.'''
-strings=['Gain LP','Special Summon 1 "King of Kings, Lord of Lords"']
+Cannot be destroyed by battle. This face-up card on the field cannot be Tributed, except by its own effect. Each time a monster(s) is Summoned: Your opponent gains 1000 LP for each. You take no battle damage from battles involving your Defense Position monsters. You can Tribute this card; Special Summon 1 "King of Kings, Lord of Lords" from your hand, GY, or banishment.'''
+strings=['Your opponent gains LP','Special Summon 1 "King of Kings, Lord of Lords"']
 
 [[card]]
 id = 220000004
@@ -221,7 +221,7 @@ ot = "custom"
 name = "Divine Resurrection"
 type = "trap"
 effect = '''
-Neither player can activate cards or effects in response to this card's activation. If "Every Knee Will Bow" is on the field, "Ultimate Sacrifice" is on the field or in the GY(s), "Lord of Lords, King of Kings" is in your GY: Special Summon 1 "King of Kings, Lord of Lords" from your GY during the 3rd Standby Phase after this card's activation.'''
+Neither player can activate cards or effects in response to this card's activation. If "Every Knee Will Bow" is on the field, "Ultimate Sacrifice" is on the field or in the GY(s), "Lord of Lords, King of Kings" is in your GY: Special Summon 1 "King of Kings, Lord of Lords" from your GY during your 3rd Standby Phase after this card's activation.'''
 
 [[card]]
 id = 220000022

@@ -33,7 +33,7 @@ function s.initial_effect(c)
 	c:RegisterEffect(e3)
 	--[[
 	Each time a monster(s) is Summoned:
-	Gain 1000 LP for each.
+	Your opponent gains 1000 LP for each.
 	]]--
 	local e4a=Effect.CreateEffect(c)
 	e4a:SetDescription(aux.Stringid(id,0))
@@ -88,15 +88,15 @@ function s.e4tgt(e,tp,eg,ep,ev,re,r,rp,chk)
 	end
 
 	local ct=eg:GetCount()
-	Duel.SetTargetPlayer(tp)
+	Duel.SetTargetPlayer(1-tp)
 	Duel.SetTargetParam(ct*1000)
-	Duel.SetOperationInfo(0,CATEGORY_RECOVER,0,0,tp,ct*1000)
+	Duel.SetOperationInfo(0,CATEGORY_RECOVER,0,0,1-tp,ct*1000)
 end
 function s.e4evt(e,tp)
 	local c=e:GetHandler()
 	if c:IsRelateToEffect(e) then
-		local p,d=Duel.GetChainInfo(0,CHAININFO_TARGET_PLAYER,CHAININFO_TARGET_PARAM)
-		Duel.Recover(p,d,REASON_EFFECT)
+		local p,lp=Duel.GetChainInfo(0,CHAININFO_TARGET_PLAYER,CHAININFO_TARGET_PARAM)
+		Duel.Recover(p,lp,REASON_EFFECT)
 	end
 end
 function s.e5cst(e,tp,eg,ep,ev,re,r,rp,chk)

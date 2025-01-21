@@ -6,7 +6,7 @@ function s.initial_effect(c)
 	--[[
 	If “Every Knee Will Bow” is on the field, “Ultimate Sacrifice” is on the field or in the GY(s),
 	and “Lord of Lords, King of Kings” is in your GY:
-	Special Summon 1 “King of Kings, Lord of Lords” from your GY during the 3rd Standby Phase after this card’s activation.
+	Special Summon 1 “King of Kings, Lord of Lords” from your GY during your 3rd Standby Phase after this card’s activation.
 	]]--
 	local e1=Effect.CreateEffect(c)
 	e1:SetCategory(CATEGORY_SPECIAL_SUMMON)
@@ -37,7 +37,7 @@ function s.e1evt(e,tp)
 	local c=e:GetHandler()
 	local ct1=0
 	local ct2=3
-	if Duel.GetCurrentPhase()==PHASE_STANDBY then
+	if Duel.GetCurrentPhase()==PHASE_STANDBY and Duel.GetTurnPlayer()==tp then
 		ct1=-1
 		ct2=4
 	end
@@ -53,6 +53,8 @@ function s.e1evt(e,tp)
 	Duel.RegisterEffect(e1b,tp)
 end
 function s.e1bcon(e)
+	if Duel.GetTurnPlayer()~=e:GetHandlerPlayer() then return false end
+
 	e:SetLabel(e:GetLabel()+1)
 
 	if e:GetLabel()==3 then
