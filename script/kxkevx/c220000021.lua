@@ -49,7 +49,7 @@ function s.e1evt(e,tp)
 	e1b:SetLabel(ct1)
 	e1b:SetCondition(s.e1bcon)
 	e1b:SetOperation(s.e1bevt)
-	e1b:SetReset(RESET_EVENT+RESETS_STANDARD+RESET_PHASE+PHASE_STANDBY,ct2)
+	e1b:SetReset(RESET_PHASE+PHASE_STANDBY+RESET_SELF_TURN,ct2)
 	Duel.RegisterEffect(e1b,tp)
 end
 function s.e1bcon(e)
