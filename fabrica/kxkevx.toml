@@ -1,10 +1,12 @@
+# celestial warrior : race = 1073741824
+
 [[card]]
 id = 220000001
 setnumber = "KXRF-EN001"
 ot = "custom"
 name = "King of Kings, Lord of Lords"
 attribute = "light"
-race = "celestial-warrior"
+race = 1073741824
 type = "monster effect"
 atk = 0
 def = 0
@@ -253,7 +255,7 @@ setnumber = "KXRF-EN024"
 ot = "custom"
 name = "Depart from Me"
 attribute = "light"
-race = "celestial-warrior"
+race = 1073741824
 type = "monster effect xyz"
 atk = 777
 def = 777
